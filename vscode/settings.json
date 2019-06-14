@@ -1,0 +1,166 @@
+{
+  "better-comments.highlightPlainText": true,
+    "better-comments.tags": [
+      {
+        "tag": "!",
+        "color": "#FF2D00",
+        "strikethrough": false,
+        "backgroundColor": "transparent"
+      },
+      {
+        "tag": "#",
+        "color": "#219f11",
+        "strikethrough": false,
+        "backgroundColor": "transparent"
+      },
+      {
+        "tag": "?",
+        "color": "#3498DB",
+        "strikethrough": false,
+        "backgroundColor": "transparent"
+      },
+      {
+        "tag": "//",
+        "color": "#474747",
+        "strikethrough": true,
+        "backgroundColor": "transparent"
+      },
+      {
+        "tag": "todo",
+        "color": "#FF8C00",
+        "strikethrough": false,
+        "backgroundColor": "transparent"
+      },
+      {
+        "tag": "*",
+        "color": "#98C379",
+        "strikethrough": false,
+        "backgroundColor": "transparent"
+      }
+    ],
+  "css.lint.hexColorLength": "ignore",
+  "css.lint.unknownAtRules": "ignore",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.acceptSuggestionOnEnter": "off",
+  "eslint.autoFixOnSave": true,
+  "editor.cursorBlinking": "phase",
+  "editor.cursorWidth": 3,
+  "editor.fontFamily": "Dank Mono",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": false,
+  },
+  "editor.formatOnSaveTimeout": 0,
+  "editor.formatOnType": true,
+  "editor.letterSpacing": 0.5,
+  "editor.lineHeight": 25,
+  "editor.matchBrackets": true,
+  "editor.minimap.enabled": false,
+  "editor.minimap.maxColumn": 100,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.showSlider": "mouseover",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.renderControlCharacters": false,
+  "editor.renderWhitespace": "none",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 100,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          //following will be in italic
+          "comment",
+          "entity.name.type.class", //class names
+          "keyword", //import, export, return…
+          "constant", //String, Number, Boolean…, this, super
+          "storage.modifier", //static keyword
+          "storage.type.class.js" //class keyword
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "emmet.includeLanguages": {
+    "html": "html",
+    "css": "css",
+    "javascript": "javascriptreact",
+    "scss": "scss",
+    "ejs": "html",
+    "plaintext": "jade"
+  },
+  "emmet.variables": {
+    "lang": "en-US",
+    "charset": "UTF-8"
+  },
+  "emojisense.showOnColon": false,
+  "eslint.alwaysShowStatus": true,
+  "eslint.packageManager": "npm",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.associations": {
+    "Dockerfile-prod": "dockerfile",
+    "*.js": "javascript",
+    ".functions": "shellscript",
+    ".aliases": "shellscript"
+  },
+  "files.autoSaveDelay": 5000,
+    "files.exclude": {
+      "**/.DS_Store": true,
+      "**/.git": false,
+      "**/.hg": true,
+      "**/.svn": true,
+      "**/aggregated-translations": false,
+      "**/CVS": true,
+      "**/errorScreenshots": true,
+      "**/node_modules": false
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "html.format.wrapAttributes": "force-aligned",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "markdown.extension.toc.githubCompatibility": true,
+  "markdown.extension.toc.orderedList": true,
+  "markdown.preview.fontSize": 16,
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  "[ruby]": {
+    "editor.tabSize": 4
+  },
+  "terminal.external.osxExec": "Hyper.app",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Andromeda Italic Bordered",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.swipeToNavigate": true,
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.fontAliasing": "antialiased",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "left",
+  "workbench.statusBar.feedback.visible": false,
+  "workbench.startupEditor": "welcomePage",
+  "gitlens.views.repositories.location": "scm",
+  "gitlens.views.fileHistory.location": "scm",
+  "gitlens.views.lineHistory.location": "scm",
+  "gitlens.views.compare.location": "scm",
+  "gitlens.views.search.location": "scm",
+  "markdown.extension.italic.indicator": "_",
+  "markdown.extension.list.indentationSize": "inherit",
+  "markdown.extension.orderedList.marker": "one",
+  "markdown.extension.showExplorer": true,
+  "gitlens.advanced.messages": {
+    "suppressSupportGitLensNotification": true
+  },
+  "material-icon-theme.activeIconPack": "react_redux",
+    "material-icon-theme.hidesExplorerArrows": true
+}
