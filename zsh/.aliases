@@ -1,0 +1,89 @@
+#
+# A lot of these are personal
+# Take what works for you. Change them
+# TheSavage is one you probably don't need!
+#
+
+alias update="source ~/.zshrc"
+
+# *** Commands *** #
+alias l='ls -lFGh'
+alias la='ls -al'
+alias ldot='ls -ld .*'
+alias grep='grep --color'
+alias b='brightness -m ' # Number between 0 and 1 for % brigthness
+alias work='workCode && workComms && workLocal && workTerm'
+alias stfu="osascript -e 'set volume output muted true'" # mutes volume
+
+# *** File System *** #
+alias o='open -a '
+alias c="osascript -e 'quit app '"
+alias github='cd ~/GitHub'
+
+# *** Apps *** #
+alias fire="o 'Firefox Developer Edition'"
+alias chrome="o 'Google Chrome'"
+alias chromec="o 'Google Chrome Canary'"
+alias firelite="o 'Firefox'"
+alias Docker="o 'Docker'"
+alias Brave="o 'Brave Browser'"
+alias Teams="o 'Microsoft Teams'"
+alias Outlook="o 'Microsoft Outlook'"
+alias Word="o 'Microsoft Word'"
+alias Skype="o 'Skype for Business'"
+alias Mail="o 'Thunderbird'"
+
+# *** Git *** #
+alias g='git'
+alias ga='git add .'
+alias gs='g status'
+alias gac='g add . && g commit -m '
+alias push='g push'
+alias garc='git add . && git rebase --continue'
+alias skip='git rebase --skip'
+alias grc='git rebase --continue'
+
+# *** NPM *** #
+alias nrs='npm run start'
+alias i='npm i'
+
+# *** Docker *** #
+alias di='docker images'
+alias dc='docker ps'
+alias dri='docker rmi '
+alias dsc='docker container stop '
+alias drc='docker container rm '
+
+# *** Work Specific *** #
+alias cleanI='npm run clean:install'
+alias wdio='npm run test:wdio'
+alias lint='npm run test:lint'
+alias jest='npm run test:jest'
+alias updateJest='npm run test:jest -- -u'
+alias watchJest='npm run test:jest -- --watch'
+alias MasterEng='cd ~/GitHub/work/health_benefits_management_engine'
+alias MasterJs='cd ~/GitHub/work/health-benefits-management-js'
+alias BeneEng='cd ~/GitHub/work/benefits_management_engine'
+alias BeneJs='cd ~/GitHub/work/benefits-management-js'
+alias startDev='MasterJs && nrs'
+alias startEng='MasterEng && foreman start -f Procfile.dev'
+alias workTerm='o Hyper ~/GitHub/work/benefits-management-js && o Hyper ~/GitHub/work/benefits-management-js' # Change 'Hyper' to the terminal application you are using
+alias workCode='BeneJs && code . && BeneEng && code .'
+alias workComms='Outlook && Skype && Teams'
+alias workLocal='fire http://localhost:9292/?tenant_key=2c400054-42d8-4e74-87b7-80b5bd5fde9f && fire http://localhost:8080'
+
+# *** Websites *** #
+alias Cru='fire https://crucible04.cerner.com/viewer/cru?filter=inbox'
+alias GitHub='fire https://github.com/JSavage42' #Change to your username
+alias TheSavage='fire https://thesavage.dev' # Remove probably
+alias Cerner='fire https://my.cerner.com/home/'
+alias Jira='fire https://jira2.cerner.com/secure/Dashboard.jspa'
+
+# *** Projects *** #
+alias sick='cd ~/GitHub/personal/Advanced-React/sick-fits/frontend && code . && cd ~/GitHub/ &&personal/Advanced-React/sick-fits/backend && code .' # Remove probably
+
+# *** Functions *** #
+# This one is my favorite
+gitit() {
+  git checkout REVCYCLECM-"$1"
+}
