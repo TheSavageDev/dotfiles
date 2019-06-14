@@ -2,13 +2,13 @@
 
 My dotfiles and instructions on how to install Hyper and oh-my-zsh.
 
-1. [dotfiles](#dotfiles)
-  1. [Install zsh](#install-zsh)
-  1. [Install oh-my-zsh](#install-oh-my-zsh)
-  1. [Change your dot files.](#change-your-dot-files)
-  1. [Hyper Terminal](#hyper-terminal)
-    1. [Mac](#mac)
-    1. [Windows](#windows)
+- [dotfiles](#dotfiles)
+  - [Install zsh](#install-zsh)
+  - [Install oh-my-zsh](#install-oh-my-zsh)
+  - [Change your dot files.](#change-your-dot-files)
+  - [Hyper Terminal](#hyper-terminal)
+    - [Mac](#mac)
+    - [Windows](#windows)
 
 **Note** These are for MacOS. For Windows...good luck. You can do this with PowerShell, if you aren't using PowerShell...you're missing out. Instructions for creating a profile.ps1 are at the bottom.
 
