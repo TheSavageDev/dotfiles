@@ -9,15 +9,18 @@ alias update="source ~/.zshrc"
 # *** Commands *** #
 alias l='ls -lFGh'
 alias la='ls -al'
+alias ld='ls -l | grep "^d"' # Lists all directories
 alias ldot='ls -ld .*'
 alias grep='grep --color'
 alias b='brightness -m ' # Number between 0 and 1 for % brigthness
 alias work='workCode && workComms && workLocal && workTerm'
 alias stfu="osascript -e 'set volume output muted true'" # mutes volume
+alias lps='lsof -wni ' # Takes port or protocol or both protocol:port
+alias c='clear'
+alias path='echo -e ${PATH//:/\\n}' # Prints the PATH with each directory separated by newline
 
 # *** File System *** #
 alias o='open -a '
-alias c="osascript -e 'quit app '"
 alias github='cd ~/GitHub'
 
 # *** Apps *** #
@@ -30,7 +33,6 @@ alias Brave="o 'Brave Browser'"
 alias Teams="o 'Microsoft Teams'"
 alias Outlook="o 'Microsoft Outlook'"
 alias Word="o 'Microsoft Word'"
-alias Skype="o 'Skype for Business'"
 alias Mail="o 'Thunderbird'"
 
 # *** Git *** #
@@ -46,13 +48,14 @@ alias grc='git rebase --continue'
 # *** NPM *** #
 alias nrs='npm run start'
 alias i='npm i'
+alias build='npm run build'
 
 # *** Docker *** #
 alias di='docker images'
 alias dc='docker ps'
 alias dri='docker rmi '
-alias dsc='docker container stop '
-alias drc='docker container rm '
+alias dcs='docker container stop '
+alias dcr='docker container rm '
 
 # *** Work Specific *** #
 alias cleanI='npm run clean:install'
@@ -61,16 +64,40 @@ alias lint='npm run test:lint'
 alias jest='npm run test:jest'
 alias updateJest='npm run test:jest -- -u'
 alias watchJest='npm run test:jest -- --watch'
+
 alias MasterEng='cd ~/GitHub/work/health_benefits_management_engine'
 alias MasterJs='cd ~/GitHub/work/health-benefits-management-js'
+
 alias BeneEng='cd ~/GitHub/work/benefits_management_engine'
 alias BeneJs='cd ~/GitHub/work/benefits-management-js'
+alias BeneServer='cd ~/GitHub/work/health_benefits_management_server'
+
+alias foreman='foreman start -f Procfile.dev'
+
 alias startDev='MasterJs && nrs'
-alias startEng='MasterEng && foreman start -f Procfile.dev'
+alias startBeneDev='BeneJs && nrs'
+
+alias startEng='MasterEng && foreman'
+alias startBeneEng='BeneEng && foreman'
+
+alias startSever='BeneServer && npm run rails-server'
+
 alias workTerm='o Hyper ~/GitHub/work/benefits-management-js && o Hyper ~/GitHub/work/benefits-management-js' # Change 'Hyper' to the terminal application you are using
-alias workCode='BeneJs && code . && BeneEng && code .'
-alias workComms='Outlook && Skype && Teams'
+alias workCode='cd ~/GitHub/work/ && code benefits-management-js && code benefits_management_engine && code health-benefits-management-js && code health_benefits_management_engine'
+alias workComms='Outlook && Teams'
 alias workLocal='fire http://localhost:9292/?tenant_key=2c400054-42d8-4e74-87b7-80b5bd5fde9f && fire http://localhost:8080'
+
+alias buildMaster='MasterJs && npm i && MasterEng && bundle install && npm i && npm run build:development'
+alias buildManagement='BeneJs && npm i && BeneEng && bundle install && npm i && npm run build:development'
+alias buildServer='BeneServer && bundle install && npm i && npm run build:development'
+
+alias cleanMaster='MasterJs && rm -rf node_modules && MasterEng && rm -rf node_modules client/node_modules Gemfile.lock'
+alias cleanManagement='BeneJs && rm -rf node_modules && BeneEng && rm -rf node_modules client/node_modules Gemfile.lock'
+alias cleanServer='BeneServer && rm -rf node_modules client/node_modules Gemfile.lock'
+
+alias testMaster='MasterJs && npm t && MasterEng && npm run build:test'
+alias testManagement='BeneJs && npm t && BeneEng && npm run build:test'
+alias testServer='BeneServer && npm run build:test'
 
 # *** Websites *** #
 alias Cru='fire https://crucible04.cerner.com/viewer/cru?filter=inbox'
@@ -81,9 +108,17 @@ alias Jira='fire https://jira2.cerner.com/secure/Dashboard.jspa'
 
 # *** Projects *** #
 alias sick='cd ~/GitHub/personal/Advanced-React/sick-fits/frontend && code . && cd ~/GitHub/ &&personal/Advanced-React/sick-fits/backend && code .' # Remove probably
+alias trendy='cd ~/GitHub/personal/trendysavages && code .'
 
 # *** Functions *** #
 # This one is my favorite
 gitit() {
   git checkout REVCYCLECM-"$1"
 }
+# This is a close second
+weather() {
+  curl wttr.in/"$1";
+}
+
+# *** Fun *** #
+alias lenny='echo ¯\\_(ツ)_/¯ | pbcopy'

@@ -1,0 +1,205 @@
+function cleanTheThings() {
+case $# in
+    3) echo "Running..."
+    ;;
+    *)
+      echo "Please enter 3 arguments" && \
+      trap 'zsh' EXIT
+    ;;
+  esac
+
+  case $1 in
+    1)
+      echo "###############################################################"
+      echo "############   Cleaning Health Benefits Master   ##############"
+      echo "###############################################################"
+      cleanMaster
+      echo "###############################################################"
+      echo "###########   Health Benefits Master has been Cleaned   #######"
+      echo "###############################################################"
+
+      echo "######################### Done ################################"
+      ;;
+    0)
+      echo "Skipping Master..."
+      ;;
+    *)
+      echo "Please enter 1 or 0. Example: cleanTheThings 1 0 1 which will run for Master and Sever"
+      ;;
+  esac
+  case $2 in
+    1)
+      echo "###############################################################"
+      echo "##########   Cleaning Health Benefits Management   ############"
+      echo "###############################################################"
+      cleanManagement
+      echo "###############################################################"
+      echo "#######   Health Benefits Management has been Cleaned   #######"
+      echo "###############################################################"
+
+      echo "######################### Done ################################"
+      ;;
+    0)
+      echo "Skipping Management..."
+      ;;
+    *)
+      echo "Please enter 1 or 0. Example: cleanTheThings 1 0 1 which will run for Master and Sever"
+      ;;
+  esac
+  case $3 in
+    1)
+      echo "###############################################################"
+      echo "############   Cleaning Health Benefits Server   ##############"
+      echo "###############################################################"
+      cleanServer
+      echo "###############################################################"
+      echo "###########   Health Benefits Server has been Cleaned   #######"
+      echo "###############################################################"
+
+      echo "######################### Done ################################"
+      ;;
+    0)
+      echo "Skipping Server..."
+      ;;
+    *)
+      echo "Please enter 1 or 0. Example: cleanTheThings 1 0 1 which will run for Master and Sever"
+      ;;
+  esac
+}
+function buildTheThings() {
+  case $# in
+    3) echo "Running..."
+    ;;
+    *)
+      echo "Please enter 3 arguments" && \
+      trap 'zsh' EXIT
+    ;;
+  esac
+
+  case $1 in
+    1)
+      echo "###############################################################"
+      echo "############   Building Health Benefits Master   ##############"
+      echo "###############################################################"
+      buildMaster
+      echo "###############################################################"
+      echo "###   Health Benefits Master has been installed and built   ###"
+      echo "###############################################################"
+
+      echo "######################### Done ################################"
+      ;;
+    0)
+      echo "Skipping Master..."
+      ;;
+    *)
+      echo "Please enter 1 or 0. Example: buildTheThings 1 0 1 which will run for Master and Sever"
+      ;;
+  esac
+  case $2 in
+    1)
+      echo "###############################################################"
+      echo "##########   Building Health Benefits Management   ############"
+      echo "###############################################################"
+      buildManagement
+      echo "###############################################################"
+      echo "### Health Benefits Management has been installed and built ###"
+      echo "###############################################################"
+
+      echo "######################### Done ################################"
+      ;;
+    0)
+      echo "Skipping Management..."
+      ;;
+    *)
+      echo "Please enter 1 or 0. Example: buildTheThings 1 0 1 which will run for Master and Sever"
+      ;;
+  esac
+  case $3 in
+    1)
+      echo "###############################################################"
+      echo "############   Building Health Benefits Server   ##############"
+      echo "###############################################################"
+      buildServer
+      echo "###############################################################"
+      echo "###   Health Benefits Server has been installed and built   ###"
+      echo "###############################################################"
+
+      echo "######################### Done ################################"
+      ;;
+    0)
+      echo "Skipping Server..."
+      ;;
+    *)
+      echo "Please enter 1 or 0. Example: buildTheThings 1 0 1 which will run for Master and Sever"
+      ;;
+  esac
+}
+
+function testTheThings() {
+  case $# in
+    3) echo "Running..."
+    ;;
+    *)
+      echo "Please enter 3 arguments" && \
+      trap 'zsh' EXIT
+    ;;
+  esac
+
+  case $1 in
+    1)
+      echo "###############################################################"
+      echo "############   Testing Health Benefits Master   ###############"
+      echo "###############################################################"
+      testMaster
+      echo "###############################################################"
+      echo "#########   Health Benefits Master has been tested   ##########"
+      echo "###############################################################"
+
+      echo "######################### Done ################################"
+      ;;
+    0)
+      echo "Skipping Master..."
+      ;;
+    *)
+      echo "Please enter 1 or 0. Example: testTheThings 1 0 1 which will run for Master and Sever"
+      ;;
+  esac
+  case $2 in
+    1)
+      echo "###############################################################"
+      echo "##########   Testing Health Benefits Management   #############"
+      echo "###############################################################"
+      testManagement
+      echo "###############################################################"
+      echo "#####    Health Benefits Management has been tested   #########"
+      echo "###############################################################"
+
+      echo "######################### Done ################################"
+      ;;
+    0)
+      echo "Skipping Management..."
+      ;;
+    *)
+      echo "Please enter 1 or 0. Example: testTheThings 1 0 1 which will run for Master and Sever"
+      ;;
+  esac
+  case $3 in
+    1)
+      echo "###############################################################"
+      echo "############   Testing Health Benefits Server   ###############"
+      echo "###############################################################"
+      testServer
+      echo "###############################################################"
+      echo "#########   Health Benefits Server has been tested   ##########"
+      echo "###############################################################"
+
+      echo "######################### Done ################################"
+      ;;
+    0)
+      echo "Skipping Server..."
+      ;;
+    *)
+      echo "Please enter 1 or 0. Example: testTheThings 1 0 1 which will run for Master and Sever"
+      ;;
+  esac
+}
