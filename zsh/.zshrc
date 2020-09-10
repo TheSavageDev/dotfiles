@@ -8,6 +8,10 @@ export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
 export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
 export PATH=$PATH:/usr/local/mysql/bin
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
@@ -26,8 +30,8 @@ load-nvmrc() {
     nvm use default
   fi
 }
-add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+eval "$(rbenv init -)"
 
 COMPLETION_WAITING_DOTS="true"
 
@@ -63,19 +67,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.spaceship
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# You can put your aliases in here or important them like I do from a .aliases
+# You can put your aliases in here or import them like I do from a .aliases
 source ~/.aliases
 source ~/.functions
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/js063531/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/js063531/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/js063531/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/js063531/google-cloud-sdk/completion.zsh.inc'; fi
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
