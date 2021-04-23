@@ -1,49 +1,49 @@
-function path_remove {
+function path_remove() {
   # Delete path by parts so we can never accidentally remove sub paths
   PATH=${PATH/":$1:"/":"} # delete any instances in the middle
-  PATH=${PATH/#"$1:"/} # delete any instance at the beginning
-  PATH=${PATH/%":$1"/} # delete any instance at the end
+  PATH=${PATH/#"$1:"/}    # delete any instance at the beginning
+  PATH=${PATH/%":$1"/}    # delete any instance at the end
 }
-function myuptime () {
+function myuptime() {
   uptime | awk '{ print "Uptime:", $3, $4, $5 }' | sed 's/,//g'
-  return;
-}
-
-gitit() {
-  git checkout REVCYCLECM-"$1"
+  return
 }
 
 weather() {
-  curl wttr.in/"$1";
+  curl wttr.in/"$1"
 }
 
-function secret {
+function secret() {
   output="${HOME}/$(basename ${1}).$(date +%F).enc"
   gpg --encrypt --armor \
     --output ${output} \
     -r jason@thesavage.dev \
-    "${1}" && echo "${1} -> ${output}""
+    "${1}" && echo "${1} -> ${output}"
 }
 
-function reveal {
+function reveal() {
   output=$(echo "${1}" | rev | cut -c16- | rev)
-  gpg --decrypt --output ${output} "${1}" && echo "${1} -> ${output}""
+  gpg --decrypt --output ${output} "${1}" && echo "${1} -> ${output}"
 }
 
-function domain () {
+function domain() {
   awk -F "." '{print { $(NF-1)"."$(NF) }}' "${1}"
 }
 
-function gpg_restart {
+function gpg_restart() {
   pkill gpg
   pkill pinentry
   pkill ssh-agent
   eval $(gpg-agent --daemon --enable-ssh-support)
 }
 
-function lock {
+function lock() {
   date
   xhost &>/dev/null || return
-  (sleep 1 ; slock) 2>/dev/null &
-  sleep 1 ; systemctl suspend
+  (
+    sleep 1
+    slock
+  ) 2>/dev/null &
+  sleep 1
+  systemctl suspend
 }

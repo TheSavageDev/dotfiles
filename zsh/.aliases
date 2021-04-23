@@ -1,8 +1,17 @@
-#
 # A lot of these are personal
 # Take what works for you. Change them
 # TheSavage is one you probably don't need!
 #
+
+alias -s ts=c
+alias -s tsx=c
+alias -s js=c
+alias -s jsx=c
+alias -s json=c
+alias -s md=c
+alias -s html=c
+alias -s scss=c
+alias -s css=c
 
 alias update="source ~/.zshrc"
 alias c='code-insiders'
@@ -20,12 +29,26 @@ alias grep='grep --color'
 alias b='brightness -m ' # Number between 0 and 1 for % brigthness
 alias work='workCode && workComms && workLocal && workTerm'
 alias stfu="osascript -e 'set volume output muted true'" # mutes volume
-alias lps='lsof -wni ' # Takes port or protocol or both protocol:port
-alias path='echo -e ${PATH//:/\\n}' # Prints the PATH with each directory separated by newline
+alias lps='lsof -wni '                                   # Takes port or protocol:port
+alias path='echo -e ${PATH//:/\\n}'                      # Prints the PATH with each directory separated by newline
+
+# *** Redwood *** #
+alias rw='yarn rw '
+alias rwd='yarn rw dev'
+alias rwg='yarn rw g '
+alias rwp='yarn rw g page '
+alias rwco='yarn rw g component '
+alias rwce='yarn rw g cell '
+alias rwsdl='yarn rw g sdl '
+alias rwscaff='yarn rw g scaffold '
+alias rwdest='yarn rw d '
 
 # *** File System *** #
 alias o='open -a '
 alias github='cd ~/GitHub'
+alias dev="cd ~/dev"
+alias personalGH='cd ~/GitHub/personal'
+alias workGH='cd ~/GitHub/work'
 
 # *** Apps *** #
 alias fire="o 'Firefox Developer Edition'"
@@ -36,7 +59,10 @@ alias Docker="o 'Docker'"
 alias Teams="o 'Microsoft Teams'"
 alias Outlook="o 'Microsoft Outlook'"
 alias Word="o 'Microsoft Word'"
+alias 3000="chrome http://localhost:3000"
+alias 8080="chrome http://localhost:8080"
 alias 8000="chrome http://localhost:8000"
+alias 8910="chrome http://localhost:8910"
 alias graphql="chrome http://localhost:8000/___graphql"
 alias intelli='o IntelliJ IDEA CE'
 
@@ -65,49 +91,13 @@ alias dri='docker rmi '
 alias dcs='docker container stop '
 alias dcr='docker container rm '
 
-# *** Work Specific *** #
-alias cleanI='npm run clean:install'
-alias updateJest='npm run test:jest -- -u'
-alias watchJest='npm run test:jest -- --watch'
-alias workTerm='o Hyper ~/GitHub/work/hbm/qualification-codes-js && o Hyper ~/GitHub/work/hbm/qualification_codes_engine'
-alias workCode='cd ~/GitHub/work/hbm && code benefits-management-js && code benefits_management_engine && code qualification-codes-js && code qualification_codes_engine'
-alias workComms='Outlook && Teams'
-alias 9292='chrome http://localhost:9292/?tenant_key=2c400054-42d8-4e74-87b7-80b5bd5fde9f'
-alias 8080='chrome http://localhost:8080'
-alias workLocal='9292 && 8080'
-
-alias nvmVersion='echo "lts/dubnium" > .nvmrc'
-alias updateNVM='ManJs && nvmVersion && ManEng && nvmVersion && cd client && nvmVersion && MasJs && nvmVersion && MasEng && nvmVersion && cd client && nvmVersion && AccJs && nvmVersion && AccEng && nvmVersion && cd client && nvmVersion && Server && nvmVersion && cd client && nvmVersion && QualJs && nvmVersion && QualEng && cd client && nvmVersion && echo "Updated all .nvmrc."'
-
-alias rvmVersion='echo "2.6.2" > .ruby-version'
-alias updateRVM='ManEng && rvmVersion && MasEng && rvmVersion && QualEng && rvmVersion && AccEng && rvmVersion && Server && rvmVersion && echo "Updated all .ruby-version."'
-
-alias buildEng='bundle install && npm i && npm run build:development'
-
-alias cleanJs='rm -rf node_modules package-lock.json'
-alias cleanEng='cleanJs && rm -rf Gemfile.lock client/package-lock.json client/node_modules'
-
-alias testEng='npm run build:test:capybara'
-
-alias jestT='npm run test:jest'
-alias jestTU='npm run test:jest -- -u'
-alias jestTW='npm run test:jest -- --watch'
-
-alias wdioT='npm run test:wdio'
-
 # *** Websites *** #
-alias Cru='chrome https://crucible04.cerner.com/viewer/cru?filter=inbox'
-alias GitHub='chrome https://github.com/JSavage42' # Change to your username
-alias Cerner='chrome https://my.cerner.com/home/'
-alias myTime='chrome https://mytime.cerner.com'
-alias Jira='chrome https://jira2.cerner.com/secure/Dashboard.jspa'
+alias GitHub='chrome https://github.com/TheSavageDev' # Change to your username
+alias TheSavage='chrome https://thesavage.dev'     # Remove probably
 
 # *** Fun *** #
 alias lenny='echo ¯\\_(ツ)_/¯ | pbcopy'
 
-# *** Hub Enterprise *** #
-alias ehub='GITHUB_HOST=github.cerner.com hub '
-
 # *** Services *** #
-alias startMongo='brew services start mongodb-community'
-alias stopMongo='brew services stop mongodb-community'
+alias startmongo='brew services start mongodb-community'
+alias stopmongo='brew services stop mongodb-community'
