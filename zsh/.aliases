@@ -1,8 +1,3 @@
-# A lot of these are personal
-# Take what works for you. Change them
-# TheSavage is one you probably don't need!
-#
-
 alias -s ts=c
 alias -s tsx=c
 alias -s js=c
@@ -27,10 +22,11 @@ alias ld='ls -l | grep "^d"' # Lists all directories
 alias ldot='ls -ld .*'
 alias grep='grep --color'
 alias b='brightness -m ' # Number between 0 and 1 for % brigthness
-alias work='workCode && workComms && workLocal && workTerm'
 alias stfu="osascript -e 'set volume output muted true'" # mutes volume
 alias lps='lsof -wni '                                   # Takes port or protocol:port
-alias path='echo -e ${PATH//:/\\n}'                      # Prints the PATH with each directory separated by newline
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 # *** Redwood *** #
 alias rw='yarn rw '
@@ -45,32 +41,40 @@ alias rwdest='yarn rw d '
 
 # *** File System *** #
 alias o='open -a '
-alias github='cd ~/GitHub'
-alias dev="cd ~/dev"
-alias personalGH='cd ~/GitHub/personal'
-alias workGH='cd ~/GitHub/work'
+alias personalGH='cd ~/personal'
+alias cleanup="find . -name '*.DS_Store' -type f -ls -delete" # Recursively delete `.DS_Store` files
+alias clsym="find -L . -name . -o -type d -prune -o -type l -exec rm {} +" # remove broken symlinks
+alias rmf="rm -rf"
+alias df='df -h' # disk free, in Gigabytes, not bytes
+alias du='du -h -c' # calculate disk usage for a folder
+alias ios='open -a /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
+alias lpath='echo $PATH | tr ":" "\n"' # list the PATH separated by new lines
+alias nr="npm run"
 
 # *** Apps *** #
 alias fire="o 'Firefox Developer Edition'"
 alias chrome="o 'Google Chrome'"
+alias safari="o 'Safari'"
 alias chromec="o 'Google Chrome Canary'"
+alias brave="o 'Brave'"
 alias firelite="o 'Firefox'"
 alias Docker="o 'Docker'"
 alias Teams="o 'Microsoft Teams'"
 alias Outlook="o 'Microsoft Outlook'"
 alias Word="o 'Microsoft Word'"
-alias 3000="chrome http://localhost:3000"
-alias 8080="chrome http://localhost:8080"
-alias 8000="chrome http://localhost:8000"
-alias 8910="chrome http://localhost:8910"
-alias graphql="chrome http://localhost:8000/___graphql"
-alias intelli='o IntelliJ IDEA CE'
+alias 3000="firelite http://localhost:3000"
+alias 8080="firelite http://localhost:8080"
+alias 8000="firelite http://localhost:8000"
+alias 8910="firelite http://localhost:8910"
+alias graphql="firelite http://localhost:8000/___graphql"
+alias webstorm='o WebStorm'
+alias ios='open -a /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 
 # *** Git *** #
 alias g='git'
 alias ga='git add .'
 alias gs='g status'
-alias gac='g add . && g commit -m '
+alias gac='g add . && g commit -S -m '
 alias push='g push'
 alias garc='git add . && git rebase --continue'
 alias skip='git rebase --skip'
@@ -92,8 +96,8 @@ alias dcs='docker container stop '
 alias dcr='docker container rm '
 
 # *** Websites *** #
-alias GitHub='chrome https://github.com/TheSavageDev' # Change to your username
-alias TheSavage='chrome https://thesavage.dev'     # Remove probably
+alias GitHub='fire https://github.com/TheSavageDev'
+alias TheSavage='fire https://thesavage.dev'
 
 # *** Fun *** #
 alias lenny='echo ¯\\_(ツ)_/¯ | pbcopy'
@@ -101,3 +105,8 @@ alias lenny='echo ¯\\_(ツ)_/¯ | pbcopy'
 # *** Services *** #
 alias startmongo='brew services start mongodb-community'
 alias stopmongo='brew services stop mongodb-community'
+
+# ### Vault ### #
+alias vault_testing="unset VAULT_ADDR; export VAULT_ADDR='https://vault-us-west-2-testing.c2fo.com'; vault login -no-print -method=github"
+alias vault_nonprod="unset VAULT_ADDR; export VAULT_ADDR='https://vault-us-west-2-non-prod.c2fo.com'; vault login -no-print -method=github"
+alias vault_prod="unset VAULT_ADDR; export VAULT_ADDR='https://vault-us-west-2.c2fo.com'; vault login -no-print -method=github"
