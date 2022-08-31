@@ -1,33 +1,25 @@
 {
+  "editor.formatOnSave": true,
   // UI Shrink
   "breadcrumbs.enabled": false,
-  "editor.codeLens": false,
+  "editor.codeLens": true,
   "editor.folding": false, // Disables code folding making the gutter smaller
   "editor.glyphMargin": false, // Makes gutter smaller.
   "editor.hideCursorInOverviewRuler": false, // Removes cursor location on scrollbar.
   "editor.minimap.enabled": false, // Disables minimap
   "editor.overviewRulerBorder": false, // Removes border from overview ruler
   "editor.renderControlCharacters": false,
-  "editor.renderLineHighlight": "none", // Removes line highlight
   "editor.renderWhitespace": "none",
-  "editor.scrollbar.horizontal": "hidden", // Hides Horizontal Scrollbar
-  "editor.scrollbar.vertical": "hidden", // Hides Vertical Scrollbar
-  "explorer.openEditors.visible": 0, // removes the open editors section at the top of the sidebar, you can see the opened files with ⌘ + ⌥ + Tab
-  "editor.occurrencesHighlight": false, // removes highlights occurrences (still works when you select a word)
-  "editor.matchBrackets": "near", // removes the highlight of matching brackets
-  "workbench.activityBar.visible": false,
+  "editor.scrollbar.horizontal": "auto", // Hides Horizontal Scrollbar
+  "editor.scrollbar.vertical": "auto", // Hides Vertical Scrollbar
+  "explorer.openEditors.visible": 0,
   "workbench.colorCustomizations": {
     "editorOverviewRuler.addedForeground": "#0000",
     "editorOverviewRuler.modifiedForeground": "#0000",
     "editorOverviewRuler.deletedForeground": "#0000"
   },
-  "workbench.editor.showIcons": false, // removes icon from opened files in tabs
-  "workbench.editor.showTabs": false, // ctl + tab
-  "workbench.editor.tabCloseButton": "off", // removes cross icon from tabs
   "workbench.editor.tabSizing": "shrink",
-  "workbench.statusBar.visible": true, // removes the status bar
-  "workbench.tree.renderIndentGuides": "none", // Explorer indent guides
-  "window.zoomLevel": -1,
+  "workbench.tree.renderIndentGuides": "none",
   // End UI Shrink
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -75,6 +67,7 @@
     "automagically",
     "backticks",
     "backtrace",
+    "browserconfig",
     "browserslist",
     "btns",
     "cacheable",
@@ -113,6 +106,7 @@
     "jestconfig",
     "JIRA",
     "jiras",
+    "Krenn",
     "languagedetector",
     "LDAP",
     "libasound2",
@@ -135,6 +129,7 @@
     "mongodb",
     "mongosetup",
     "moxios",
+    "msapplication",
     "msedge",
     "mutators",
     "myfunc",
@@ -148,7 +143,9 @@
     "offerid",
     "Offertest",
     "onwarn",
+    "Padley",
     "paginator",
+    "Pingboard",
     "pluralrules",
     "plusplus",
     "POSTGRES",
@@ -181,6 +178,7 @@
     "sveltejs",
     "svgr",
     "SYSTEMROOT",
+    "Tenderheart",
     "Testerson",
     "testid",
     "thesavage",
@@ -188,6 +186,7 @@
     "typeorm",
     "uncategorized",
     "unmount",
+    "unselectable",
     "upsert",
     "userid",
     "varchar",
@@ -200,10 +199,11 @@
     "worklist",
     "xauth",
     "xstate",
-    "xvfb"
+    "xvfb",
+    "Zehr"
   ],
   "css.validate": false,
-  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.ignoreTrimWhitespace": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.bracketPairColorization.enabled": true,
   "editor.codeActionsOnSave": {
@@ -218,7 +218,6 @@
   "editor.fontFamily": "Victor Mono",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
-  "editor.formatOnSave": true,
   "editor.guides.bracketPairs": "active",
   "editor.guides.highlightActiveBracketPair": true,
   "editor.guides.bracketPairsHorizontal": "active",
@@ -331,7 +330,7 @@
   "gitlens.advanced.messages": {
     "suppressRebaseSwitchToTextWarning": true
   },
-  "gitlens.statusBar.enabled": false,
+  "gitlens.statusBar.enabled": true,
   "html.autoClosingTags": true,
   "html.format.wrapAttributes": "force-aligned",
   "javascript.autoClosingTags": true,
@@ -359,8 +358,10 @@
   "window.title": "${dirty} ${activeEditorShort}${separator}${rootName}",
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Andromeda Italic",
+  "workbench.colorTheme": "Activate UMBRA protocol",
   "workbench.preferredDarkColorTheme": "Activate UMBRA protocol",
   "workbench.preferredLightColorTheme": "Solarized Light",
-  "workbench.iconTheme": "vscode-icons"
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.activityBar.visible": false,
+  "window.zoomLevel": -1
 }
